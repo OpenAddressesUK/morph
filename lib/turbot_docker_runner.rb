@@ -40,7 +40,7 @@ class TurbotDockerRunner
 
     if !config['incremental'] && !config['manually_end_run'] # the former is legacy
       @run_ended = true
-      send_run_ended_to_angler
+   #   send_run_ended_to_angler
     end
 
     report_run_ended(status_code, metrics)
@@ -53,7 +53,7 @@ class TurbotDockerRunner
   end
 
   def set_up
-    connect_to_rabbitmq
+  #  connect_to_rabbitmq
     set_up_directory(data_path)
     set_up_directory(output_path)
     set_up_directory(downloads_path)
@@ -106,6 +106,8 @@ class TurbotDockerRunner
 
       # Bots using OpencBot's incrementors expect to be able to write to /repo/db.
       # This could be removed if OpencBot is made smarter.
+      FileUtils.mkdir_p repo_path
+      FileUtils.chmod 0777, repo_path
       File.symlink(data_path, File.join(repo_path, 'db'))
     end
   end
@@ -118,6 +120,7 @@ class TurbotDockerRunner
     container = create_container
 
     begin
+      local_root_path = Rails.root
       binds = [
         "#{repo_path}:/repo:ro",
         "#{data_path}:/data",
@@ -199,7 +202,7 @@ class TurbotDockerRunner
   end
 
   def local_root_path
-    ENV['DOCKER_URL'] ? "/vagrant" : Rails.root
+    Rails.root
   end
 
   def command
@@ -370,16 +373,16 @@ class TurbotDockerRunner
   end
 
   def base_path
-    if Rails.env.production?
-      '/oc/openc/scrapers'
-    else
-      'db/scrapers'
-    end
+    #if Rails.env.production?
+    #  '/oc/openc/scrapers'
+    #else
+      '/tmp/'
+    #end
   end
 
   def log_exception_and_notify_airbrake(e)
     Rails.logger.error("Hit error when running container: #{e}")
     e.backtrace.each { |line| Rails.logger.error(line) }
-    Airbrake.notify(e, :parameters => @params)
+#    Airbrake.notify(e, :parameters => @params)
   end
 end

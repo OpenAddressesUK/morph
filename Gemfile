@@ -69,7 +69,7 @@ gem 'turbot-runner', '0.1.18'
 # Required to keep capistrano happy
 gem 'net-ssh', '2.7.0'
 
-gem 'airbrake'
+#gem 'airbrake'
 
 group :production do
   gem "dalli"

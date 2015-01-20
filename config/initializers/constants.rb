@@ -1,2 +1,2 @@
-GITLAB_DOMAIN = 'git.opencorporates.internal'
-GITLAB_GROUP = 'turbot'
+GITLAB_DOMAIN = 'github.com'
+GITLAB_GROUP = 'oa-bots'
