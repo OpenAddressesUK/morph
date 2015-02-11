@@ -17,7 +17,7 @@ GIT
       sass-rails
 
 GIT
-  remote: git@github.com:metaquark/foreman-export-initscript.git
+  remote: https://github.com/metaquark/foreman-export-initscript.git
   revision: a897eb0220fedda741643364498050659517d9f9
   specs:
     foreman-export-initscript (0.0.1)

@@ -27,7 +27,7 @@ gem "grit"
 gem 'docker-api', :require => 'docker'
 gem "sidekiq"
 gem "foreman"
-gem 'foreman-export-initscript', :git => 'git@github.com:metaquark/foreman-export-initscript.git'
+gem 'foreman-export-initscript', :git => 'https://github.com/metaquark/foreman-export-initscript.git'
 gem "faraday"
 #gem 'jquery-turbolinks'
 gem "archive-tar-minitar"
