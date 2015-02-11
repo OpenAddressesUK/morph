@@ -23,7 +23,7 @@
 vagrant_ansible_inventory_local
 vagrant_ansible_inventory_production
 vagrant_ansible_inventory_production2
-config/database.yml
+#config/database.yml
 coverage
 
 # emacs crud
