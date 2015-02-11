@@ -40,5 +40,8 @@ ADD config/unicorn.rb /app/config/unicorn.rb
 # Add default foreman config
 ADD Procfile /app/Procfile
 
+# Run Docker
+RUN service docker.io start
+
 ENV RAILS_ENV production
 CMD bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake assets:precompile && bundle exec rake app:update_docker_image && foreman start -f Procfile
