@@ -5,5 +5,7 @@ test:
   host: localhost
   port: 6379
 production:
-  host: localhost
-  port: 6379
+#  host: redis-morph-1.openaddressesuk.cont.tutum.io
+#  port: 6379
+#6RDBG4JcE2qQCL8wAwOqvea86OcItTdH
+  url: redis://:6RDBG4JcE2qQCL8wAwOqvea86OcItTdH@redis-morph-1.openaddressesuk.cont.tutum.io:6379
