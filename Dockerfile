@@ -1,8 +1,6 @@
 FROM seapy/ruby:2.1.2
 MAINTAINER Open Addresses <derp@openaddress.es>
 
-VOLUME ["/data"]
-
 RUN apt-get update
 
 RUN apt-get install git
