@@ -376,7 +376,7 @@ class TurbotDockerRunner
     #if Rails.env.production?
     #  '/oc/openc/scrapers'
     #else
-      '/tmp/'
+      '/data/'
     #end
   end
 
