@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install git
 RUN apt-get install -y libmysqld-dev
 RUN apt-get install -y nodejs
-#RUN apt-get install -y docker.io
+RUN apt-get install -y docker.io
 RUN apt-get install -y libxslt1-dev
 RUN apt-get install -y libxml2-dev
 
